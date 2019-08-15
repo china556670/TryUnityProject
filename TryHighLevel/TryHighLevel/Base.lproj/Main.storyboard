@@ -19,10 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-eD-49L">
-                                <rect key="frame" x="179" y="433" width="56" height="30"/>
+                                <rect key="frame" x="159" y="425.5" width="96" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="GoUnity"/>
                                 <connections>
-                                    <action selector="tryGCD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zAk-fS-35b"/>
+                                    <action selector="goUnity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ZK-ge-7rW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="tryGCD" destination="xDj-eD-49L" id="KLR-TQ-Hwk"/>
+                        <outlet property="goUnityBtn" destination="xDj-eD-49L" id="imC-52-WW5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

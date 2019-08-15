@@ -27,11 +27,13 @@
 }
 
 + (void)initializeWithMainWindow:(UIWindow *)mainWindow launchOptions:(NSDictionary *)launchOptions{
-    UnityManager *manager = [UnityManager sharedManager];
-    manager.mainWindow = mainWindow;
-    manager.unityAppDelegate = [[UnityAppController alloc] init];
-    [manager.unityAppDelegate application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
-    [manager.unityAppDelegate applicationDidBecomeActive:[UIApplication sharedApplication]];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        UnityManager *manager = [UnityManager sharedManager];
+        manager.mainWindow = mainWindow;
+        manager.unityController = [[UnityAppController alloc] init];
+        [manager.unityController application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
+    });
 }
 
 #pragma mark - Method
@@ -43,7 +45,8 @@
     dispatch_once(&onceToken, ^{
         UIButton *backToNative = [UIButton buttonWithType:UIButtonTypeSystem];
         backToNative.frame = CGRectMake(10, 10, 200, 100);
-        [backToNative setTitle:@"backToNative" forState:UIControlStateNormal];
+        backToNative.titleLabel.font = [UIFont systemFontOfSize:27];
+        [backToNative setTitle:@"BackToNative" forState:UIControlStateNormal];
         [backToNative addTarget:self action:@selector(showMainWindow) forControlEvents:UIControlEventTouchUpInside];
         
         [self.unityWindow addSubview:backToNative];

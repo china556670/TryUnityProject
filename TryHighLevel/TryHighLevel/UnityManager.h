@@ -11,7 +11,7 @@
 
 @interface UnityManager : NSObject
 
-@property (nonatomic, strong) UnityAppController *unityAppDelegate;
+@property (nonatomic, strong) UnityAppController *unityController;
 
 + (UnityManager *)sharedManager;
 

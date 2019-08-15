@@ -23,27 +23,27 @@
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    [[UnityManager sharedManager].unityAppDelegate applicationWillResignActive:application];
+    [[UnityManager sharedManager].unityController applicationWillResignActive:application];
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [[UnityManager sharedManager].unityAppDelegate applicationDidEnterBackground:application];
+    [[UnityManager sharedManager].unityController applicationDidEnterBackground:application];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [[UnityManager sharedManager].unityAppDelegate applicationWillEnterForeground:application];
+    [[UnityManager sharedManager].unityController applicationWillEnterForeground:application];
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [[UnityManager sharedManager].unityAppDelegate applicationDidBecomeActive:application];
+    [[UnityManager sharedManager].unityController applicationDidBecomeActive:application];
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [[UnityManager sharedManager].unityAppDelegate applicationWillTerminate:application];
+    [[UnityManager sharedManager].unityController applicationWillTerminate:application];
 }
 
 

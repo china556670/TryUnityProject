@@ -10,32 +10,15 @@
 #import "UnityManager.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *tryGCD;
 
-@property (nonatomic, assign) int ticketSurplusCount;
+@property (weak, nonatomic) IBOutlet UIButton *goUnityBtn;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (IBAction)tryGCD:(id)sender {
-    [self goUnity];
-}
-
-- (void)goUnity {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        UnitySendMessage("LoadScenes", "GetDate", [@"mp" UTF8String]);
-        UnitySendMessage("LoadFile", "GetDate", [@"http://resourcesnode1.yuantaoit.com/mp/" UTF8String]);
-        UnitySendMessage("LoadFile", "GetScenicId", [@"123" UTF8String]);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[UnityManager sharedManager] showUnityWindow];
-        });
-    });
+- (IBAction)goUnity:(id)sender {
+    [[UnityManager sharedManager] showUnityWindow];
 }
 
 
