@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UnityManager.h"
 
 @interface AppDelegate ()
 
@@ -21,26 +22,6 @@
     return _unityWindow;
 }
 
-- (void)showUnityWindow {
-    UnityPause(0);
-    [self.unityWindow makeKeyAndVisible];
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        UIButton *backToNative = [UIButton buttonWithType:UIButtonTypeSystem];
-        backToNative.frame = CGRectMake(10, 10, 200, 100);
-        [backToNative setTitle:@"backToNative" forState:UIControlStateNormal];
-        [backToNative addTarget:self action:@selector(hideUnityWindow) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self.unityWindow addSubview:backToNative];
-    });
-}
-
-- (void)hideUnityWindow {
-    UnityPause(1);
-    [self.window makeKeyAndVisible];
-}
-
 - (void)createAR {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -48,12 +29,12 @@
         [self.unityController application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:self.dic];
         [self.unityController applicationDidBecomeActive:[UIApplication sharedApplication]];
     });
-    [self.window makeKeyAndVisible];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.dic = launchOptions;
     [self createAR];
+    [[UnityManager sharedManager] setupMainWindow:self.window UnityWindow:self.unityWindow];
     return YES;
 }
 

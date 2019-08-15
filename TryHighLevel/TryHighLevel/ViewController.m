@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UnityManager.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *tryGCD;
@@ -32,7 +33,7 @@
         UnitySendMessage("LoadFile", "GetDate", [@"http://resourcesnode1.yuantaoit.com/mp/" UTF8String]);
         UnitySendMessage("LoadFile", "GetScenicId", [@"123" UTF8String]);
         dispatch_async(dispatch_get_main_queue(), ^{
-            [(AppDelegate*)[UIApplication sharedApplication].delegate showUnityWindow];
+            [[UnityManager sharedManager] showUnityWindow];
         });
     });
 }

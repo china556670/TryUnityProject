@@ -11,22 +11,14 @@
 
 @interface UnityManager : NSObject
 
-//+ (UnityManager *)sharedManager;
-//
-//@property (strong, nonatomic) NSDictionary *launchOptions;
-//@property (strong, nonatomic) UIWindow *mainWindow;
-//@property (strong, nonatomic) ViewController *mainController;
-//
-//@property (strong, nonatomic) UIWindow *unityWindow;
-//@property (strong, nonatomic) UnityAppController *unityController;
-//
-//- (void)showUnityWindow;
-//
-//- (void)showMainWindow;
-//
-//
-//- (instancetype)init NS_UNAVAILABLE;
-//+ (instancetype)new NS_UNAVAILABLE;
++ (UnityManager *)sharedManager;
+
+- (void)setupMainWindow:(UIWindow *)mainWindow UnityWindow:(UIWindow *)unityWindow;
+
+- (void)showUnityWindow;
+
+- (void)showMainWindow;
+
 
 @end
 

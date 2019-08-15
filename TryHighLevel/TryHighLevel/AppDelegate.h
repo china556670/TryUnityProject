@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UnityManager.h"
 
 @class ViewController, UnityAppController;
 
@@ -21,8 +20,6 @@
 
 @property (strong, nonatomic) NSDictionary *dic;
 
-- (void)showUnityWindow;
-- (void)hideUnityWindow;
 - (void)createAR;
 
 @end
