@@ -15,44 +15,35 @@
 
 @implementation AppDelegate
 
-- (void)createUnityDelegateWithOptions:(NSDictionary *)launchOptions {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        self.unityController = [[UnityAppController alloc] init];
-        [self.unityController application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
-        [self.unityController applicationDidBecomeActive:[UIApplication sharedApplication]];
-    });
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self createUnityDelegateWithOptions:launchOptions];
-    [[UnityManager sharedManager] setupMainWindow:self.window];
+    [[UnityManager sharedManager] setupMainWindow:self.window launchOptions:launchOptions];
+    self.unityController = [UnityManager sharedManager].unityAppDelegate;
     return YES;
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    [self.unityController applicationWillResignActive:application];
+    [[UnityManager sharedManager].unityAppDelegate applicationWillResignActive:application];
 }
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [self.unityController applicationDidEnterBackground:application];
+    [[UnityManager sharedManager].unityAppDelegate applicationDidEnterBackground:application];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [self.unityController applicationWillEnterForeground:application];
+    [[UnityManager sharedManager].unityAppDelegate applicationWillEnterForeground:application];
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [self.unityController applicationDidBecomeActive:application];
+    [[UnityManager sharedManager].unityAppDelegate applicationDidBecomeActive:application];
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    [self.unityController applicationWillTerminate:application];
+    [[UnityManager sharedManager].unityAppDelegate applicationWillTerminate:application];
 }
 
 

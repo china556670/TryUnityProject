@@ -11,9 +11,11 @@
 
 @interface UnityManager : NSObject
 
+@property (nonatomic, strong) UnityAppController *unityAppDelegate;
+
 + (UnityManager *)sharedManager;
 
-- (void)setupMainWindow:(UIWindow *)mainWindow;
+- (void)setupMainWindow:(UIWindow *)mainWindow launchOptions:(NSDictionary *)launchOptions;
 
 - (void)showUnityWindow;
 
