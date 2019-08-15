@@ -26,9 +26,8 @@
     return _sharedManager;
 }
 
-- (void)setupMainWindow:(UIWindow *)mainWindow UnityWindow:(UIWindow *)unityWindow {
+- (void)setupMainWindow:(UIWindow *)mainWindow{
     self.mainWindow = mainWindow;
-    self.unityWindow = unityWindow;
 }
 
 #pragma mark - Method
@@ -50,6 +49,14 @@
 - (void)showMainWindow {
     UnityPause(1);
     [self.mainWindow makeKeyAndVisible];
+}
+
+#pragma mark - Get
+- (UIWindow *)unityWindow {
+    if (!_unityWindow) {
+        _unityWindow = UnityGetMainWindow();
+    }
+    return _unityWindow;
 }
 
 

@@ -13,7 +13,7 @@
 
 + (UnityManager *)sharedManager;
 
-- (void)setupMainWindow:(UIWindow *)mainWindow UnityWindow:(UIWindow *)unityWindow;
+- (void)setupMainWindow:(UIWindow *)mainWindow;
 
 - (void)showUnityWindow;
 

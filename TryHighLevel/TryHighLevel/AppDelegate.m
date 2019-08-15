@@ -15,26 +15,18 @@
 
 @implementation AppDelegate
 
-- (UIWindow *)unityWindow {
-    if (!_unityWindow) {
-        return UnityGetMainWindow();
-    }
-    return _unityWindow;
-}
-
-- (void)createAR {
+- (void)createUnityDelegateWithOptions:(NSDictionary *)launchOptions {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         self.unityController = [[UnityAppController alloc] init];
-        [self.unityController application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:self.dic];
+        [self.unityController application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
         [self.unityController applicationDidBecomeActive:[UIApplication sharedApplication]];
     });
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.dic = launchOptions;
-    [self createAR];
-    [[UnityManager sharedManager] setupMainWindow:self.window UnityWindow:self.unityWindow];
+    [self createUnityDelegateWithOptions:launchOptions];
+    [[UnityManager sharedManager] setupMainWindow:self.window];
     return YES;
 }
 
