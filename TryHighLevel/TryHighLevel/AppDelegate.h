@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController, UnityAppController;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UnityAppController *unityController;
+
 
 @end
 

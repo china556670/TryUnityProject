@@ -26,11 +26,12 @@
     return _sharedManager;
 }
 
-- (void)setupMainWindow:(UIWindow *)mainWindow launchOptions:(NSDictionary *)launchOptions{
-    self.mainWindow = mainWindow;
-    self.unityAppDelegate = [[UnityAppController alloc] init];
-    [self.unityAppDelegate application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
-    [self.unityAppDelegate applicationDidBecomeActive:[UIApplication sharedApplication]];
++ (void)initializeWithMainWindow:(UIWindow *)mainWindow launchOptions:(NSDictionary *)launchOptions{
+    UnityManager *manager = [UnityManager sharedManager];
+    manager.mainWindow = mainWindow;
+    manager.unityAppDelegate = [[UnityAppController alloc] init];
+    [manager.unityAppDelegate application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
+    [manager.unityAppDelegate applicationDidBecomeActive:[UIApplication sharedApplication]];
 }
 
 #pragma mark - Method

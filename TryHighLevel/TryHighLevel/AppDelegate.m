@@ -15,9 +15,9 @@
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[UnityManager sharedManager] setupMainWindow:self.window launchOptions:launchOptions];
-    self.unityController = [UnityManager sharedManager].unityAppDelegate;
+    [UnityManager initializeWithMainWindow:self.window launchOptions:launchOptions];
     return YES;
 }
 

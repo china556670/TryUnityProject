@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "UnityAppController.h"
 
 @interface UnityManager : NSObject
 
@@ -15,7 +15,7 @@
 
 + (UnityManager *)sharedManager;
 
-- (void)setupMainWindow:(UIWindow *)mainWindow launchOptions:(NSDictionary *)launchOptions;
++ (void)initializeWithMainWindow:(UIWindow *)mainWindow launchOptions:(NSDictionary *)launchOptions;
 
 - (void)showUnityWindow;
 
