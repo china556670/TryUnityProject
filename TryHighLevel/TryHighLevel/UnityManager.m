@@ -44,7 +44,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         UIButton *backToNative = [UIButton buttonWithType:UIButtonTypeSystem];
-        backToNative.frame = CGRectMake(10, 10, 200, 100);
+        backToNative.frame = CGRectMake(10, 30, 200, 100);
         backToNative.titleLabel.font = [UIFont systemFontOfSize:27];
         [backToNative setTitle:@"BackToNative" forState:UIControlStateNormal];
         [backToNative addTarget:self action:@selector(showMainWindow) forControlEvents:UIControlEventTouchUpInside];
