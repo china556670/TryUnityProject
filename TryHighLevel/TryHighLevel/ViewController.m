@@ -11,13 +11,13 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *goUnityBtn;
-
 @end
 
 @implementation ViewController
 
-- (IBAction)goUnity:(id)sender {
+- (IBAction)goUnity:(UIButton *)sender {
+    const char *direction = @(sender.tag).stringValue.UTF8String;
+    UnitySendMessage("Cube", "rotateTo", direction);
     [[UnityManager sharedManager] showUnityWindow];
 }
 

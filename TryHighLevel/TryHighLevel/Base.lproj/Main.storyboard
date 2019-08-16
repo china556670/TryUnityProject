@@ -19,24 +19,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-eD-49L">
-                                <rect key="frame" x="159" y="425.5" width="96" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="GoUnity"/>
+                                <rect key="frame" x="95.5" y="427" width="223" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="GoUnityRotateToLeft"/>
                                 <connections>
                                     <action selector="goUnity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ZK-ge-7rW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXI-YS-4oP">
+                                <rect key="frame" x="88" y="479" width="238" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="GoUnityRotateToRight"/>
+                                <connections>
+                                    <action selector="goUnity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d9m-Uf-CFB"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VXI-YS-4oP" firstAttribute="centerX" secondItem="xDj-eD-49L" secondAttribute="centerX" id="2xI-ih-znE"/>
                             <constraint firstItem="xDj-eD-49L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a8A-Q6-R95"/>
+                            <constraint firstItem="VXI-YS-4oP" firstAttribute="top" secondItem="xDj-eD-49L" secondAttribute="bottom" constant="10" id="afQ-qg-gah"/>
                             <constraint firstItem="xDj-eD-49L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="spY-mY-fEC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="goUnityBtn" destination="xDj-eD-49L" id="imC-52-WW5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
